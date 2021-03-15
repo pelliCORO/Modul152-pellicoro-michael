@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#650087">
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#650087">
+    <meta name="msapplication-config" content="C:\Users\Administrator\Desktop\favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +25,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -75,9 +86,9 @@
     </div>
   </nav>
   <div id="main-title">
-      <div><hr></div>
-      <div class="Logo"> <img src="/images/LogoFinal.png"></div>
-      <div><hr></div>
+
+      <div class="Logo"> <img src="/images/Lines.png"></div>
+
   </div>
 
   <div class="container">

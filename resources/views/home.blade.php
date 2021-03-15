@@ -19,7 +19,14 @@ There is no post till now. Login and write a new post now!!!
         @endif
         @endif
       </h3>
-      <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a></p>
+
+
+      <p>
+          @if ($post->author->profile_image)
+              <img src="{{ asset($post->author->profile_image)}}"  style="width: 40px; height: 40px; border-radius: 50%;" loading="lazy"; onload='console.log("lazy cat");'/>
+              @endif
+          {{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
+      </p>
     </div>
     <div class="list-group-item">
       <article>

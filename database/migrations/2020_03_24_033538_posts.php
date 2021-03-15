@@ -22,7 +22,8 @@ class Posts extends Migration
         ->onDelete('cascade');
       $table->string('title')->unique();
       $table->text('body');
-      $table->string('slug')->unique();
+      $table->text('license');
+        $table->string('slug')->unique();
       $table->boolean('active');
       $table->timestamps();
     });

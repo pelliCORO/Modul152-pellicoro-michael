@@ -26,6 +26,13 @@ Edit Post
       {!! old('body') !!}
     </textarea>
   </div>
+    <div class="form-group">
+        <select name="licence" class="form-control">
+            @foreach ($post->licences as $key => $value)
+                <option value="{{ $key}}" selected="@if($post->licence == $key)true @endif">{{ $value }}</option>
+            @endforeach
+        </select>
+    </div>
   @if($post->active == '1')
   <input type="submit" name='publish' class="btn btn-success" value="Update" />
   @else

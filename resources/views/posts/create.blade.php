@@ -20,6 +20,20 @@ Add New Post
   <div class="form-group">
     <textarea name='body' class="form-control">{{ old('body') }}</textarea>
   </div>
+    <div class="form-group">
+        <select name='license' class="form-control">
+            <option value="ARR">Choose license for the photo</option>
+            <option value="ARR">All rights reserved(Default)</option>
+            <option value="PD">Public domain</option>
+            <option value="BY">BY</option>
+            <option value="BY-SA">BY-SA</option>
+            <option value="BY-ND">BY-ND</option>
+            <option value="BY-NC">BY-NC</option>
+            <option value="BY-NC-SA">BY-NC-SA</option>
+            <option value="BY-NC-ND">BY-NC-ND</option>
+
+        </select>
+    </div>
   <input type="submit" name='publish' class="btn btn-success" value="Publish" />
   <input type="submit" name='save' class="btn btn-default" value="Save Draft" />
 </form>

@@ -34,7 +34,7 @@ class PostController extends Controller
    */
   public function create(Request $request)
   {
-    // 
+    //
     if ($request->user()->can_post()) {
       return view('posts.create');
     } else {
@@ -52,6 +52,7 @@ class PostController extends Controller
     $post = new Posts();
     $post->title = $request->get('title');
     $post->body = $request->get('body');
+    $post->license = $request->get('license');
     $post->slug = Str::slug($post->title);
 
     $duplicate = Posts::where('slug', $post->slug)->first();
@@ -100,8 +101,20 @@ class PostController extends Controller
   public function edit(Request $request, $slug)
   {
     $post = Posts::where('slug', $slug)->first();
-    if ($post && ($request->user()->id == $post->author_id || $request->user()->is_admin()))
+    if ($post && ($request->user()->id == $post->author_id || $request->user()->is_admin())){
+        $post->licences = array(
+            "ARR" => "All rights reserved",
+            "PB" => "Public domain",
+            "CC" => "Creative commons",
+            "BY"=>"BY",
+            "BY-SA"=>"BY-SA",
+            "BY-ND"=> "BY-ND",
+            "BY-NC"=>"BY-NC",
+            "BY-NC-SA"=>"BY-NC-SA",
+            "BY-NC-ND"=>"BY-NC-ND"
+        );
       return view('posts.edit')->with('post', $post);
+    }
     else {
       return redirect('/')->withErrors('you have not sufficient permissions');
     }
@@ -132,6 +145,7 @@ class PostController extends Controller
 
       $post->title = $title;
       $post->body = $request->input('body');
+      $post->license = $request->input('license');
 
       if ($request->has('save')) {
         $post->active = 0;
